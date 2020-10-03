@@ -1,11 +1,13 @@
 import pygame
 import time
 import random
+import numpy
+import pandas
 
 pygame.init()
 crash_sound = pygame.mixer.Sound("Crash.wav")
 pygame.mixer.music.load("No_Culture.mp3")
-display_width=700
+display_width=800
 display_height=600
 
 black = (0,0,0)
@@ -18,7 +20,7 @@ bright_red = (255 ,0 ,0)
 bright_green = (0 , 255 ,0)
 purple = (163 , 73 ,164)
 
-car_width = 99
+car_width = 100
 pause=False
 
 gamedisplay= pygame.display.set_mode((display_width,display_height))
@@ -118,7 +120,7 @@ def paused():
     
 
         pygame.display.update()
-        clock.tick(10)
+        clock.tick(20)
 
 def game_intro():
     i = (display_width * 0.25)
@@ -158,9 +160,9 @@ def game_loop():
 
     thing_startx = random.randrange(0, display_width)
     thing_starty = -600
-    thing_speed = 10
-    thing_width = 100
-    thing_height = 100
+    thing_speed = 11
+    thing_width = 101
+    thing_height = 101
 
     thingcount=1
     dodged = 0
@@ -229,7 +231,7 @@ def game_loop():
             
         pygame.display.update()
 
-        clock.tick(60)
+        clock.tick(50)
 game_intro()
 game_loop()
 pygame.quit()
